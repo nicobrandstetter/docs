@@ -150,7 +150,7 @@ const myEOA = web3.eth.accounts.wallet.add(PRIVATE_KEY);
 The final step is to pass the encoded LYX transfer function to the Key Manager. Since we are calling from the UP's owner address, the Key Manager will authorize and execute the LYX transfer.
 
 ```javascript
-await myKM.execute(transferLYXPayload).send({
+await myKM.methods.execute(transferLYXPayload).send({
   from: myEOA.address,
   gasLimit: 300_000,
 });
